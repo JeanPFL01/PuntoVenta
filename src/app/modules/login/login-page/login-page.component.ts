@@ -18,7 +18,6 @@ export class LoginPageComponent {
   username : string = ""
   password : string = ""
 
-  message : string = ""
   onLoginFormSubmit(): void {
     const { username, password } = this;
     if(username == "" || password == ""){
@@ -27,13 +26,15 @@ export class LoginPageComponent {
     this.authentication.login(username, password).subscribe((isAuthenticated: boolean) => {
       if (isAuthenticated) {
         $('#btn-login-modal-success').trigger('click');
-        this.message = this.authentication.message
-        //this.router.navigate(['/home']);
       } else {
         $('#btn-login-modal-error').trigger('click');
-        this.message = this.authentication.message
       }
     });
     }
+  }
+
+  LimpiarFormulario(){
+    $('#login-username').text('')
+    $('#login-password').text('')
   }
 }
