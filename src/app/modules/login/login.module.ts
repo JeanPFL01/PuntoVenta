@@ -7,17 +7,21 @@ import { LoginPageComponent } from './login-page/login-page.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ApiRoutes } from 'src/app/api-routes';
+import { FormsModule } from '@angular/forms';
 
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    LoginPageComponent
+    LoginPageComponent,
   ],
   imports: [
     CommonModule,
     LoginRoutingModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    FormsModule,
+    SharedModule
   ],
   providers: [ApiRoutes],
 })

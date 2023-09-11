@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/modules/login/services/login.service';
+import { AuthenticationService } from '../../core/authentication/authentication.service';
+import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login-page',
@@ -7,12 +9,31 @@ import { LoginService } from 'src/app/modules/login/services/login.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  username = '';
-  password = '';
+
 
   ngOnInit(): void {
   }
+  constructor(private authentication : AuthenticationService, private router : Router){}
 
-  constructor(private loginService : LoginService){}
+  username : string = ""
+  password : string = ""
 
+  message : string = ""
+  onLoginFormSubmit(): void {
+    const { username, password } = this;
+    if(username == "" || password == ""){
+      $('#btn-login-modal-empty').trigger('click');
+    }else{
+    this.authentication.login(username, password).subscribe((isAuthenticated: boolean) => {
+      if (isAuthenticated) {
+        $('#btn-login-modal-success').trigger('click');
+        this.message = this.authentication.message
+        //this.router.navigate(['/home']);
+      } else {
+        $('#btn-login-modal-error').trigger('click');
+        this.message = this.authentication.message
+      }
+    });
+    }
+  }
 }

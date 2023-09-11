@@ -1,0 +1,52 @@
+<!-- Button trigger modal -->
+<button id="btn-login-modal-error" type="button" class="d-none" data-bs-toggle="modal" data-bs-target="#login-modal-error"></button>
+<button id="btn-login-modal-success" type="button" class="d-none" data-bs-toggle="modal" data-bs-target="#login-modal-success"></button>
+<button id="btn-login-modal-empty" type="button" class="d-none" data-bs-toggle="modal" data-bs-target="#login-modal-empty"></button>
+
+
+<div class="modal fade" id="login-modal-error" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-labelledby="lbl-login-modal-error" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="lbl-login-modal-error">Error al Ingresar</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Usuario o Contraseña Incorrectos
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="login-modal-success" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-labelledby="lbl-login-modal-success" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="lbl-login-modal-success">Usuario Encontrado</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Probar otro usuario</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="IngresarAlMenu()">Ir al Menu</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="login-modal-empty" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-labelledby="lbl-login-modal-empty" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="lbl-login-modal-empty">Error al Ingresar</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Complete los campos
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+      </div>
+    </div>
+  </div>
+</div>

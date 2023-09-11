@@ -9,9 +9,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private username : string = ""
-  private password : string = ""
   private isAuthenticated = false;
+  public username : string = ""
+  public password : string = ""
+  public message : string = ""
 
   constructor(private http: HttpClient, private api : ApiRoutes){}
 
@@ -19,12 +20,15 @@ export class AuthenticationService {
     return this.http.get<any>(this.api.UrlUsuario + this.api.login + "?username=" + username + "&password=" + password)
       .pipe(
         map(response => {
-          if (response.data === true) {
+          if (response.isSuccess === true) {
             this.isAuthenticated = true;
+            this.username = username
+            this.password = password
           } else {
             this.isAuthenticated = false;
           }
-          return response.data as boolean;
+          this.message = response.message
+          return response.isSuccess as boolean;
         })
       );
   }
