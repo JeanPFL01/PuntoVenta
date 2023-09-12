@@ -33,6 +33,7 @@ export class LoginModalComponent implements OnInit {
   // }
   IngresarAlMenu() {
     if(this.authentication.isAuthenticatedUser()){
+      console.log("El usuario esta autenticado")
       this.router.navigate(['home'])
     }else{
       console.log("El usuario no esta autenticado")

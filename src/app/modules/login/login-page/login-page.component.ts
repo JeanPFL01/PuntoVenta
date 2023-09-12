@@ -36,5 +36,6 @@ export class LoginPageComponent {
   LimpiarFormulario(){
     $('#login-username').text('')
     $('#login-password').text('')
+    this.authentication.logout()
   }
 }

@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
 
   abrirSidebar() {
-    document.querySelector(".sd-sidebar").classList.toggle("open");
+    const sidebar = document.querySelector(".sd-sidebar");
+    if (sidebar) {
+      sidebar.classList.toggle("open");
+    }
   }
 
 }
