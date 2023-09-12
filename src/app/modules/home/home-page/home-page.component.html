@@ -1,16 +1,18 @@
 <div class="container-fluid p-0 m-0 vh-100 vw-100">
   <!-- sidebar -->
-  <div class="d-flex justify-content-center">
-    <div style="width: 25vw; height: 100vh;">
+
       <app-sidebar></app-sidebar>
-    </div>
-    <div style="width: 75vw; height: 100vh;">
+
       <app-header></app-header>
 
       holas
-    </div>
-  </div>
 </div>
+<script>
+
+  function abrirSidebar(){
+      document.querySelector(".sd-sidebar").classList.toggle("open");
+    }
+    </script>
 
 
 

@@ -1,1 +1,107 @@
-<p>sidebar works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="sd-sidebar">
+  <div class="logo-details">
+    <i class="bx bxl-c-plus-plus icon"></i>
+    <div class="logo_name">CodingLab</div>
+    <i class="fa-solid fa-bars" id="btn" onclick="abrirSidebar()"></i>
+  </div>
+  <ul class="nav-list">
+    <li>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search..." />
+      <span class="tooltip">Search</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-chess-board"></i>
+        <span class="links_name">Dashboard</span>
+      </a>
+      <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-user"></i>
+        <span class="links_name">User</span>
+      </a>
+      <span class="tooltip">User</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-envelope"></i>
+        <span class="links_name">Messages</span>
+      </a>
+      <span class="tooltip">Messages</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-chart-line"></i>
+        <span class="links_name">Analytics</span>
+      </a>
+      <span class="tooltip">Analytics</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-file"></i>
+        <span class="links_name">File Manager</span>
+      </a>
+      <span class="tooltip">Files</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="links_name">Order</span>
+      </a>
+      <span class="tooltip">Order</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-regular fa-floppy-disk"></i>
+        <span class="links_name">Saved</span>
+      </a>
+      <span class="tooltip">Saved</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li class="profile">
+      <div class="profile-details">
+        <img src="profile.jpg" alt="profileImg" />
+        <div class="name_job">
+          <div class="name">Prem Shahi</div>
+          <div class="job">Web designer</div>
+        </div>
+      </div>
+      <i class="bx bx-log-out" id="log_out"></i>
+    </li>
+  </ul>
+</div>
+<script>
+  let sidebar = document.querySelector(".sd-sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+  searchBtn.addEventListener("click", () => {
+    // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+    if (sidebar.classList.contains("open")) {
+      closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+    } else {
+      closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+    }
+  }
+
+  function abrirSidebar(){
+    document.querySelector(".sd-sidebar").classList.toggle("open");
+  }
+</script>
